@@ -1,0 +1,10 @@
+#!/bin/bash -l
+#SBATCH -n 8
+#SBATCH -t 96:00:00
+#SBATCH -J run
+
+export OMP_NUM_THREADS=8
+source ~/cosmosis/setup-cosmosis2
+export CAMB_VERSION=original
+export PLANCK_VERSION=original
+cosmosis params.ini
